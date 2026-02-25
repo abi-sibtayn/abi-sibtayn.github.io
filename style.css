@@ -1,9 +1,62 @@
+/* =========================
+   Noto Sans (Self-Hosted)
+   ========================= */
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('NotoSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('NotoSans-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('NotoSans-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('NotoSans-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('NotoSans-BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* =========================
+   Base Layout
+   ========================= */
+
 body {
   font-family: 'Noto Sans', sans-serif;
   margin: 0;
-  background: #f6f6f6;
+  background-color: #f2f1ee;
+  background-image: url("arabic-tile.png");
+  background-repeat: repeat;
+  background-size: 400px;
   color: #222;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
+
+/* =========================
+   Header
+   ========================= */
 
 header {
   background: #111;
@@ -17,7 +70,8 @@ header {
 header h1 {
   margin: 0;
   font-size: 1.4rem;
-  letter-spacing: 1px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 nav a {
@@ -25,13 +79,26 @@ nav a {
   text-decoration: none;
   margin-left: 1.5rem;
   font-size: 0.9rem;
+  font-weight: 500;
 }
+
+nav a:hover {
+  opacity: 0.8;
+}
+
+/* =========================
+   Main Content
+   ========================= */
 
 main {
   padding: 4rem 2rem;
   max-width: 1000px;
   margin: auto;
 }
+
+/* =========================
+   Section Cards (Homepage)
+   ========================= */
 
 .section-grid {
   display: grid;
@@ -42,44 +109,63 @@ main {
 .card {
   background: white;
   padding: 2rem;
-  border: 1px solid #ddd;
+  border: 1px solid #e0e0e0;
   text-decoration: none;
   color: #222;
+  transition: 0.15s ease;
+}
+
+.card:hover {
+  border-color: #bbb;
 }
 
 .card h3 {
   margin-top: 0;
+  font-weight: 600;
 }
+
+/* =========================
+   Content Items (Books, Majalis, etc.)
+   ========================= */
 
 .item {
   background: white;
-  padding: 1rem;
-  border: 1px solid #ddd;
-  margin-bottom: 1rem;
+  padding: 1.5rem;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 1.5rem;
 }
 
 .item h3 {
   margin-top: 0;
+  font-weight: 600;
 }
 
-footer {
-  text-align: center;
-  padding: 2rem;
-  font-size: 0.8rem;
-  color: #666;
+.item a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #111;
 }
+
+.item a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   Search Page
+   ========================= */
 
 .search-container {
   max-width: 800px;
   margin: auto;
 }
 
-body {
-  font-family: Georgia, serif;
-  margin: 0;
-  background-color: #f2f1ee;
-  background-image: url("arabic-tile.png");
-  background-repeat: repeat;
-  background-size: 400px; /* adjust this */
-  color: #222;
+/* =========================
+   Footer
+   ========================= */
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.8rem;
+  color: #666;
 }
