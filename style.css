@@ -27,68 +27,39 @@ nav a {
   font-size: 0.9rem;
 }
 
-.hero {
-  text-align: center;
-  padding: 6rem 2rem;
+main {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: auto;
 }
 
-.hero h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  color: #555;
-}
-
-.btn {
-  display: inline-block;
-  margin-top: 1.5rem;
-  padding: 0.8rem 1.6rem;
-  background: #111;
-  color: white;
-  text-decoration: none;
-  font-size: 0.9rem;
-}
-
-.search-section {
-  padding: 2rem;
-  text-align: center;
-}
-
-#searchInput {
-  width: 300px;
-  padding: 0.7rem;
-  font-size: 0.9rem;
-}
-
-.book-grid {
+.section-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
 }
 
-.book-card {
+.card {
+  background: white;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  text-decoration: none;
+  color: #222;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.item {
   background: white;
   padding: 1rem;
   border: 1px solid #ddd;
+  margin-bottom: 1rem;
 }
 
-.book-card h3 {
+.item h3 {
   margin-top: 0;
-  font-size: 1rem;
-}
-
-.book-card p {
-  font-size: 0.85rem;
-  color: #666;
-}
-
-.book-card a {
-  font-size: 0.8rem;
-  text-decoration: none;
-  color: #111;
 }
 
 footer {
@@ -96,4 +67,9 @@ footer {
   padding: 2rem;
   font-size: 0.8rem;
   color: #666;
+}
+
+.search-container {
+  max-width: 800px;
+  margin: auto;
 }
