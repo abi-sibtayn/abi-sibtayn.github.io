@@ -1,33 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Search | Jamaat Abi Sibtayn</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="app">
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo-link">
+      <img src="logo.png" alt="Jamaat Abi Sibtayn">
+    </a>
+
+    <nav>
+      <a href="ebooks.html">eBooks</a>
+      <a href="majalis.html">Majālis</a>
+      <a href="qasidat.html">Qasīdat</a>
+      <a href="library.html">Resources</a>
+      <a href="search.html" class="active">Search</a>
+    </nav>
+  </div>
+</header>
 
 <main class="container">
   <h1 class="page-title">Search</h1>
 
   <div class="searchbar">
-    <input id="q" class="search-input" type="text" placeholder="Search titles, authors, topics…">
-    <div id="status" class="search-status">Type to search…</div>
+    <input class="search-input" placeholder="Search books, majālis, qasīdat..." />
   </div>
 
-  <div id="results" class="results"></div>
+  <div id="content"></div>
 </main>
 
-<script>
-  window.addEventListener("DOMContentLoaded", async () => {
-    await ABI.mountChrome("search");
-  });
-</script>
 <script src="search.js"></script>
-
-</div>
-<script src="site.js"></script>
 <script src="render.js"></script>
 </body>
 </html>
