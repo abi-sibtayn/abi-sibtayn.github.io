@@ -79,58 +79,53 @@ a:hover{
    Header (clean + thin line)
    ------------------------- */
 .site-header{
-  background: var(--paper);
-  border-bottom: 1px solid var(--line);
+  background: #ffffff;
+  border-bottom: 1px solid #e6e6e6;
 }
 
 .site-header .container{
-  padding: 18px 0;
+  padding: 16px 0;
   display:flex;
-  align-items:flex-start;
+  align-items:center;
   justify-content: space-between;
-  gap: 18px;
 }
 
-.brand{
+/* LOGO */
+.logo-link{
   display:flex;
-  flex-direction:column;
-  gap: 6px;
+  align-items:center;
+  text-decoration:none;
 }
 
-.brand-title{
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: .1px;
-  color: var(--ink);
+.logo-link img{
+  height: 42px;
+  transition: filter .15s ease;
 }
 
-.brand-sub{
-  font-size: 13px;
-  color: var(--muted);
-  font-weight: 600;
+/* hover → red */
+.logo-link:hover img{
+  filter: brightness(0) saturate(100%) invert(16%) sepia(98%) saturate(7484%) hue-rotate(0deg) brightness(88%) contrast(106%);
 }
 
+/* NAV */
 .site-header nav{
   display:flex;
-  gap: 18px;
-  flex-wrap: wrap;
-  justify-content:flex-end;
+  gap: 22px;
   align-items:center;
 }
 
 .site-header nav a{
-  color: var(--ink);
   font-size: 13px;
   font-weight: 600;
-  padding: 6px 0;
+  color: #111;
+  text-decoration:none;
   border-bottom: 2px solid transparent;
-  text-decoration: none;
+  padding-bottom: 4px;
 }
 
 .site-header nav a:hover{
-  color: var(--accent);
-  border-bottom-color: var(--accent);
-  text-decoration: none;
+  color: #b10000;
+  border-bottom-color: #b10000;
 }
 
 /* Optional "active" highlight if you add class="active" in HTML */
