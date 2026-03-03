@@ -2,48 +2,30 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Jamaat Abi Sibtayn</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="app">
 
-<header>
-  <h1>Jamaat Abi Sibtayn</h1>
-  <nav>
-    <a href="ebooks.html">eBooks</a>
-    <a href="majalis.html">Majālis</a>
-    <a href="qasidat.html">Qasīdat</a>
-    <a href="links.html">Resources</a>
-    <a href="search.html">Search</a>
-  </nav>
-</header>
-
-<main>
-  <h2>Digital Shī'ah Knowledge Hub</h2>
-
-  <div class="section-grid">
-    <a href="ebooks.html" class="card">
-      <h3>eBooks</h3>
-      <p>Islamic Books and Documents</p>
-    </a>
-
-    <a href="majalis.html" class="card">
-      <h3>Majālis</h3>
-      <p>Islamic Lectures (including full Program)</p>
-    </a>
-
-    <a href="qasidat.html" class="card">
-      <h3>Qasidat</h3>
-      <p>Islamic Poetry (incl. but not ltd. to Manqabats, Latmiyat and Nauhas.)</p>
-    </a>
-
-    <a href="links.html" class="card">
-      <h3>Shī'ah Resources</h3>
-      <p>Trusted external websites and archives</p>
-    </a>
+<main class="container">
+  <div class="hero">
+    <div class="hero-title">Jamaat Abi Sibtayn</div>
+    <div class="hero-sub">Digital Shī'ah Knowledge Hub</div>
   </div>
+
+  <div id="home-rows" class="rows"></div>
 </main>
 
+<script>
+  window.addEventListener("DOMContentLoaded", async () => {
+    await ABI.mountChrome("home");
+    await ABI_RENDER.renderHome();
+  });
+</script>
 
+</div>
+<script src="site.js"></script>
+<script src="render.js"></script>
 </body>
 </html>

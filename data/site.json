@@ -1,0 +1,62 @@
+{
+  "siteName": "Jamaat Abi Sibtayn",
+  "tagline": "Digital Shī'ah Knowledge Hub",
+  "nav": [
+    {
+      "label": "Home",
+      "href": "index.html",
+      "key": "home"
+    },
+    {
+      "label": "eBooks",
+      "href": "ebooks.html",
+      "key": "ebooks"
+    },
+    {
+      "label": "Majālis",
+      "href": "majalis.html",
+      "key": "majalis"
+    },
+    {
+      "label": "Qasīdat",
+      "href": "qasidat.html",
+      "key": "qasidat"
+    },
+    {
+      "label": "Resources",
+      "href": "links.html",
+      "key": "links"
+    },
+    {
+      "label": "Search",
+      "href": "search.html",
+      "key": "search"
+    }
+  ],
+  "homeSections": [
+    {
+      "key": "ebooks",
+      "title": "eBooks",
+      "source": "data/ebooks.json",
+      "seeAll": "ebooks.html"
+    },
+    {
+      "key": "majalis",
+      "title": "Majālis",
+      "source": "data/majalis.json",
+      "seeAll": "majalis.html"
+    },
+    {
+      "key": "qasidat",
+      "title": "Qasīdat",
+      "source": "data/qasidat.json",
+      "seeAll": "qasidat.html"
+    },
+    {
+      "key": "links",
+      "title": "Resources",
+      "source": "data/links.json",
+      "seeAll": "links.html"
+    }
+  ]
+}

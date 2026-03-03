@@ -2,25 +2,32 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Search</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="app">
 
-<header>
-  <h1>Search</h1>
-  <nav><a href="index.html">Home</a></nav>
-</header>
+<main class="container">
+  <h1 class="page-title">Search</h1>
 
-<main>
-  <div class="search-container">
-
-    <script async src="https://cse.google.com/cse.js?cx=0267c0a7289af45b0"></script>
-    <div class="gcse-search"></div>
-
+  <div class="searchbar">
+    <input id="q" class="search-input" type="text" placeholder="Search titles, authors, topics…">
+    <div id="status" class="search-status">Type to search…</div>
   </div>
+
+  <div id="results" class="results"></div>
 </main>
 
+<script>
+  window.addEventListener("DOMContentLoaded", async () => {
+    await ABI.mountChrome("search");
+  });
+</script>
+<script src="search.js"></script>
 
+</div>
+<script src="site.js"></script>
+<script src="render.js"></script>
 </body>
 </html>

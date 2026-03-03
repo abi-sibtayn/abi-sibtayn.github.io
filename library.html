@@ -2,24 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Library</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="app">
 
-<header>
-  <h1>Library</h1>
-  <nav>
-    <a href="index.html">Home</a>
-  </nav>
-</header>
+<main class="container">
+  <h1 class="page-title">Library</h1>
+  <p class="muted">Redirecting to Search…</p>
+</main>
 
-<section class="search-section">
-  <input type="text" id="searchInput" placeholder="Search books...">
-</section>
+<script>
+  window.addEventListener("DOMContentLoaded", async () => {
+    await ABI.mountChrome("");
+    window.location.replace("search.html");
+  });
+</script>
 
-<section id="bookContainer" class="book-grid"></section>
-
-<script src="search.js"></script>
+</div>
+<script src="site.js"></script>
+<script src="render.js"></script>
 </body>
 </html>
