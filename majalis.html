@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Majālis | Jamaat Abi Sibtayn</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="app">
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo-link">
+      <img src="logo.png" alt="Jamaat Abi Sibtayn">
+    </a>
+
+    <nav>
+      <a href="ebooks.html">eBooks</a>
+      <a href="majalis.html" class="active">Majālis</a>
+      <a href="qasidat.html">Qasīdat</a>
+      <a href="library.html">Resources</a>
+      <a href="search.html">Search</a>
+    </nav>
+  </div>
+</header>
 
 <main class="container">
-  <h1 id="page-title" class="page-title">Majālis</h1>
-  <div id="list" class="grid"></div>
+  <h1 class="page-title">Majālis</h1>
+  <div id="content"></div>
 </main>
 
-<script>
-  window.addEventListener("DOMContentLoaded", async () => {
-    await ABI.mountChrome("majalis");
-    await ABI_RENDER.renderListPage("majalis");
-  });
-</script>
-
-</div>
-<script src="site.js"></script>
 <script src="render.js"></script>
 </body>
 </html>
