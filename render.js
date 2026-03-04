@@ -1,42 +1,78 @@
-async function loadJSON(path) {
-  const res = await fetch(path);
-  return await res.json();
+// ======================================================
+// Jamaat Abi Sibtayn — Clean Data Renderer
+// Uses /data/*.json
+// No dynamic header/footer
+// No ABI
+// ======================================================
+
+// Escape HTML safely
+function esc(s) {
+  return String(s ?? "")
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
 }
 
-function createCard(item) {
-  return `
-    <div class="card">
-      <div>
-        <h3>${item.title}</h3>
-        <div class="card-meta">${item.meta || ""}</div>
-      </div>
-      <a href="${item.href}" target="_blank">OPEN</a>
+// Render cards into container
+function renderCards(items, container) {
+  if (!container) return;
+
+  if (!items.length) {
+    container.innerHTML = `<div class="empty">No content available.</div>`;
+    return;
+  }
+
+  container.innerHTML = `
+    <div class="grid">
+      ${items.map(x => {
+        const title = esc(x.title);
+        const meta  = esc(x.meta || "");
+        const href  = esc(x.href || "#");
+        const external = href.startsWith("http");
+        const target = external ? ` target="_blank" rel="noopener noreferrer"` : "";
+
+        return `
+          <article class="card">
+            <div class="card-body">
+              <h3 class="card-title">${title}</h3>
+              ${meta 
+                ? `<div class="card-meta">${meta}</div>` 
+                : `<div class="card-meta muted">&nbsp;</div>`
+              }
+            </div>
+            <a class="card-open"${target} href="${href}">OPEN</a>
+          </article>
+        `;
+      }).join("")}
     </div>
   `;
 }
 
-async function renderSection(title, jsonPath, link) {
-  const items = await loadJSON(jsonPath);
+// Detect page type and load correct JSON
+async function initPage() {
+  const container = document.querySelector("#content");
+  if (!container) return;
 
-  const section = document.createElement("section");
-  section.className = "section";
+  const path = window.location.pathname;
 
-  section.innerHTML = `
-    <div class="section-header">
-      <h2>${title}</h2>
-      <a class="see-all" href="${link}">See all →</a>
-    </div>
-    <div class="carousel">
-      ${items.slice(0,5).map(createCard).join("")}
-    </div>
-  `;
+  let file = null;
 
-  document.getElementById("home-sections").appendChild(section);
+  if (path.includes("ebooks")) file = "data/ebooks.json";
+  else if (path.includes("majalis")) file = "data/majalis.json";
+  else if (path.includes("qasidat")) file = "data/qasidat.json";
+  else if (path.includes("library") || path.includes("resources")) file = "data/resources.json";
+  else return; // index or other page
+
+  try {
+    const res = await fetch(file, { cache: "no-store" });
+    const data = await res.json();
+    renderCards(data, container);
+  } catch (err) {
+    console.error("Failed to load data:", err);
+    container.innerHTML = `<div class="empty">Failed to load content.</div>`;
+  }
 }
 
-async function renderHome() {
-  await renderSection("eBooks", "data/ebooks.json", "ebooks.html");
-  await renderSection("Majālis", "data/majalis.json", "majalis.html");
-  await renderSection("Qasīdat", "data/qasidat.json", "qasidat.html");
-  await renderSection("Resources", "data/links.json", "links.html");
-}
+window.addEventListener("DOMContentLoaded", initPage);
