@@ -1,7 +1,20 @@
 [
   {
-    "title": "Sayed Majhūl",
-    "meta": "Profile",
-    "href": ""
+    "name": "Sayed Majhūl",
+    "role": "Scholar",
+    "description": "Studied in Hawza for 0 years\n\nTopics: Fiqh, Aqāʾid, History.",
+    "links": [
+      { "label": "YouTube", "url": "abi-sibtayn.github.io" },
+      { "label": "Website", "url": "abi-sibtayn.github.io" }
+    ]
   },
+  {
+    "name": "ibn Majhūl",
+    "role": "Zakir",
+    "description": "Self-taught\n\nSpecial focus: Majālis and poetry.",
+    "links": [
+      { "label": "Instagram", "url": "abi-sibtayn.github.io" },
+      { "label": "SoundCloud", "url": "abi-sibtayn.github.io" }
+    ]
+  }
 ]
