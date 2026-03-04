@@ -1,78 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Jamaat Abi Sibtayn</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jamaat Abi Sibtayn</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
+<body data-page="home">
+  <header class="site-header">
+    <div class="container">
+      <a class="logo-link" href="index.html" aria-label="Home">
+        <img src="logo.png" alt="Jamaat Abi Sibtayn logo">
+      </a>
 
-<header class="site-header">
-<div class="container">
+      <nav>
+        <a href="ebooks.html">eBooks</a>
+        <a href="lecturers.html">Lecturers</a>
+        <a href="qasidat.html">Qasīdat</a>
+        <a href="links.html">External Resources</a>
+        <a href="search.html">Search</a>
+      </nav>
+    </div>
+  </header>
 
-<a href="index.html" class="logo-link">
-<img src="logo.png">
-</a>
+  <main class="container">
+    <section class="hero">
+      <h1>Preserving Knowledge. Serving Community.</h1>
+      <p>An official digital archive and platform of Jamaat Abi Sibtayn.</p>
+    </section>
 
-<nav>
-<a href="ebooks.html">eBooks</a>
-<a href="lecturers.html">Lecturers</a>
-<a href="qasidat.html">Qasīdat</a>
-<a href="links.html">External Resources</a>
-<a href="search.html">Search</a>
-</nav>
+    <section class="section">
+      <div class="section-header">
+        <h2>eBooks</h2>
+        <a class="see-all" href="ebooks.html">See all →</a>
+      </div>
+      <div id="home-ebooks"></div>
+    </section>
 
-</div>
-</header>
+    <section class="section">
+      <div class="section-header">
+        <h2>Lecturers</h2>
+        <a class="see-all" href="lecturers.html">See all →</a>
+      </div>
+      <div id="home-lecturers"></div>
+    </section>
 
+    <section class="section">
+      <div class="section-header">
+        <h2>Qasīdat</h2>
+        <a class="see-all" href="qasidat.html">See all →</a>
+      </div>
+      <div id="home-qasidat"></div>
+    </section>
 
-<section class="hero container">
-<h1>Preserving Knowledge. Serving Community.</h1>
-<p>
-Jamaat Abi Sibtayn is a digital archive of Shīʿa scholarship,
-lectures, poetry, and resources.
-</p>
-</section>
+    <section class="section">
+      <div class="section-header">
+        <h2>External Resources</h2>
+        <a class="see-all" href="links.html">See all →</a>
+      </div>
+      <div id="home-links"></div>
+    </section>
+  </main>
 
-
-<main class="container">
-
-<section class="section">
-<div class="section-header">
-<h2>eBooks</h2>
-<a class="see-all" href="ebooks.html">See all →</a>
-</div>
-<div id="home-ebooks" class="carousel"></div>
-</section>
-
-<section class="section">
-<div class="section-header">
-<h2>Lecturers</h2>
-<a class="see-all" href="lecturers.html">See all →</a>
-</div>
-<div id="home-lecturers" class="carousel"></div>
-</section>
-
-<section class="section">
-<div class="section-header">
-<h2>Qasīdat</h2>
-<a class="see-all" href="qasidat.html">See all →</a>
-</div>
-<div id="home-qasidat" class="carousel"></div>
-</section>
-
-<section class="section">
-<div class="section-header">
-<h2>External Resources</h2>
-<a class="see-all" href="links.html">See all →</a>
-</div>
-<div id="home-links" class="carousel"></div>
-</section>
-
-</main>
-
-<script src="render.js"></script>
-
+  <script src="render.js"></script>
 </body>
 </html>
