@@ -62,7 +62,7 @@ async function initPage() {
   if (path.includes("ebooks")) file = "data/ebooks.json";
   else if (path.includes("majalis")) file = "data/majalis.json";
   else if (path.includes("qasidat")) file = "data/qasidat.json";
-  else if (path.includes("library") || path.includes("resources")) file = "data/resources.json";
+  else if (path.includes("library") || path.includes("links")) file = "data/links.json";
   else return; // index or other page
 
   try {
