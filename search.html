@@ -1,39 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Search | Jamaat Abi Sibtayn</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Search — Jamaat Abi Sibtayn</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo-link" href="index.html" aria-label="Home">
+        <img src="logo.png" alt="Jamaat Abi Sibtayn logo">
+      </a>
 
-<header class="site-header">
-  <div class="container">
-    <a href="index.html" class="logo-link">
-      <img src="logo.png" alt="Jamaat Abi Sibtayn">
-    </a>
+      <nav>
+        <a href="ebooks.html">eBooks</a>
+        <a href="lecturers.html">Lecturers</a>
+        <a href="qasidat.html">Qasīdat</a>
+        <a href="links.html">External Resources</a>
+        <a class="active" href="search.html">Search</a>
+      </nav>
+    </div>
+  </header>
 
-    <nav>
-      <a href="ebooks.html">eBooks</a>
-      <a href="majalis.html">Majālis</a>
-      <a href="qasidat.html">Qasīdat</a>
-      <a href="library.html">Resources</a>
-      <a href="search.html" class="active">Search</a>
-    </nav>
-  </div>
-</header>
+  <main class="container">
+    <h1 class="page-title">Search</h1>
 
-<main class="container">
-  <h1 class="page-title">Search</h1>
+    <div class="searchbar">
+      <input id="q" class="search-input" type="search" placeholder="Search eBooks, Lecturers, Qasīdat, External Resources…" />
+      <div id="status" class="search-status">Type to search…</div>
+    </div>
 
-  <div class="searchbar">
-    <input class="search-input" placeholder="Search books, majālis, qasīdat..." />
-  </div>
+    <div id="results"></div>
+  </main>
 
-  <div id="content"></div>
-</main>
-
-<script src="search.js"></script>
-<script src="render.js"></script>
+  <script src="render.js"></script>
+  <script src="search.js"></script>
 </body>
 </html>
