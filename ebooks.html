@@ -1,34 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>eBooks | Jamaat Abi Sibtayn</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>eBooks</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header class="site-header">
-  <div class="container">
-    <a href="index.html" class="logo-link">
-      <img src="logo.png" alt="Jamaat Abi Sibtayn">
-    </a>
+<div class="container">
 
-    <nav>
-      <a href="ebooks.html" class="active">eBooks</a>
-      <a href="majalis.html">Majālis</a>
-      <a href="qasidat.html">Qasīdat</a>
-      <a href="library.html">Resources</a>
-      <a href="search.html">Search</a>
-    </nav>
-  </div>
+<a href="index.html" class="logo-link">
+<img src="logo.png">
+</a>
+
+<nav>
+<a class="active" href="ebooks.html">eBooks</a>
+<a href="lecturers.html">Lecturers</a>
+<a href="qasidat.html">Qasīdat</a>
+<a href="links.html">External Resources</a>
+<a href="search.html">Search</a>
+</nav>
+
+</div>
 </header>
 
 <main class="container">
-  <h1 class="page-title">eBooks</h1>
-  <div id="content"></div>
+
+<h1 class="page-title">eBooks</h1>
+
+<div id="content"></div>
+
 </main>
 
-<script src="books.json"></script>
 <script src="render.js"></script>
+
 </body>
 </html>
