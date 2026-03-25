@@ -1,33 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>eBooks — Jamaat Abi Sibtayn</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>E-Books</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body data-page="ebooks">
-  <header class="site-header">
-    <div class="container">
-      <a class="logo-link" href="index.html" aria-label="Home">
-        <img src="logo.png" alt="Jamaat Abi Sibtayn logo">
-      </a>
+<body>
 
-      <nav>
-        <a class="active" href="ebooks.html">eBooks</a>
-        <a href="lecturers.html">Lecturers</a>
-        <a href="qasidat.html">Qasīdat</a>
-        <a href="links.html">External Resources</a>
-        <a href="search.html">Search</a>
-      </nav>
-    </div>
-  </header>
+  <h1>E-Books Library</h1>
 
-  <main class="container">
-    <h1 class="page-title">eBooks</h1>
-    <div id="content"></div>
-  </main>
+  <!-- SEARCH -->
+  <input type="text" id="search-bar" placeholder="Search books..." oninput="searchItems(this.value)">
+
+  <div class="container">
+
+    <!-- SIDEBAR -->
+    <div id="letter-nav"></div>
+
+    <!-- CONTENT -->
+    <div id="books"></div>
+
+  </div>
 
   <script src="render.js"></script>
 </body>
