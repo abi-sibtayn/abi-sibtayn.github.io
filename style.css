@@ -1,426 +1,64 @@
-/* =========================================================
-   Jamaat Abi Sibtayn — JSTOR-like Academic Theme
-   Fonts:
-   - NotoSansKR-SemiBold.ttf (UI/body)
-   - NotoSerifJP-SemiBold.ttf (headings)
-   ========================================================= */
-
-/* -------------------------
-   Fonts
-   ------------------------- */
-@font-face{
-  font-family: "JASans";
-  src: url("NotoSansKR-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face{
-  font-family: "JASerif";
-  src: url("NotoSerifJP-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* -------------------------
-   Theme Tokens (JSTOR-ish)
-   ------------------------- */
-:root{
-  --bg: #ffffff;
-  --paper: #ffffff;
-  --ink: #111111;
-  --muted: #666666;
-  --line: #e6e6e6;
-  --line2: #d9d9d9;
-
-  --accent: #b10000;      /* JSTOR-ish red */
-  --accent2: #cc0000;     /* hover red */
-
-  --btn: #111111;         /* black button */
-  --btnText: #ffffff;
-  --btnHover: var(--accent);
-
-  --maxw: 1100px;
-}
-
-/* -------------------------
-   Base
-   ------------------------- */
-*{ box-sizing: border-box; }
-
-html, body{ height:100%; }
-
-body{
-  margin:0;
-  background: var(--bg);
-  color: var(--ink);
-  font-family: "JASans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-weight: 600;
-  line-height: 1.55;
-}
-
-a{
-  color: var(--accent);
-  text-decoration: none;
-}
-a:hover{
-  color: var(--accent2);
-  text-decoration: underline;
-}
-
-.container{
-  width: min(var(--maxw), calc(100% - 48px));
-  margin: 0 auto;
-}
-
-/* -------------------------
-   Header (clean + thin line)
-   ------------------------- */
-.site-header{
-  background: #ffffff;
-  border-bottom: 1px solid #e6e6e6;
-}
-
-.site-header .container{
-  padding: 16px 0;
-  display:flex;
-  align-items:center;
-  justify-content: space-between;
-}
-
-/* LOGO */
-.logo-link{
-  display:flex;
-  align-items:center;
-  text-decoration:none;
-}
-
-.logo-link img{
-  height: 72px;
-  transition: filter .15s ease;
-}
-
-/* hover → red */
-.logo-link:hover img{
-  filter: brightness(0) saturate(100%) invert(16%) sepia(98%) saturate(7484%) hue-rotate(0deg) brightness(88%) contrast(106%);
-}
-
-/* NAV */
-.site-header nav{
-  display:flex;
-  gap: 22px;
-  align-items:center;
-}
-
-.site-header nav a{
-  font-size: 13px;
-  font-weight: 600;
-  color: #111;
-  text-decoration:none;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 4px;
-}
-
-.site-header nav a:hover{
-  color: #b10000;
-  border-bottom-color: #b10000;
-}
-
-/* Optional "active" highlight if you add class="active" in HTML */
-.site-header nav a.active{
-  color: var(--accent);
-  border-bottom-color: var(--accent);
-}
-
-/* -------------------------
-   Hero (JSTOR-like spacing)
-   ------------------------- */
-.hero{
-  padding: 70px 0 40px;
-  border-bottom: 1px solid transparent;
-}
-
-.hero h1{
+body {
+  font-family: Arial, sans-serif;
+  background: #0f0f0f;
+  color: white;
   margin: 0;
-  font-family: "JASerif", Georgia, "Times New Roman", serif;
-  font-weight: 600;
-  font-size: clamp(34px, 4.5vw, 54px);
-  letter-spacing: .2px;
-  color: var(--ink);
+  padding: 20px;
+}
+
+h1 {
   text-align: center;
 }
 
-.hero p{
-  margin: 16px auto 0;
-  max-width: 760px;
-  color: var(--muted);
+#search-bar {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
   font-size: 16px;
-  text-align: center;
 }
 
-/* -------------------------
-   Section Layout (big air)
-   ------------------------- */
-.section{
-  padding: 46px 0 0;
+.container {
+  display: flex;
 }
 
-.section + .section{
-  margin-top: 52px;
-}
-
-.section-header{
-  display:flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
-.section-header h2{
-  margin:0;
-  font-family: "JASerif", Georgia, "Times New Roman", serif;
-  font-weight: 600;
-  font-size: 28px;
-  color: var(--ink);
-}
-
-.section-desc{
-  margin: 6px 0 18px;
-  color: var(--muted);
-  font-size: 14px;
-  max-width: 860px;
-}
-
-/* See all → */
-.see-all{
-  display:inline-flex;
-  align-items:center;
+/* SIDEBAR */
+#letter-nav {
+  width: 60px;
+  display: flex;
+  flex-direction: column;
   gap: 8px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--accent);
+}
+
+#letter-nav span {
+  cursor: pointer;
+  padding: 5px;
+  text-align: center;
+  background: #1f1f1f;
+  border-radius: 4px;
+}
+
+#letter-nav span:hover {
+  background: #444;
+}
+
+/* BOOK LIST */
+#books {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.book {
+  background: #1a1a1a;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+.book a {
+  color: #4da6ff;
   text-decoration: none;
 }
-.see-all:hover{
-  color: var(--accent2);
+
+.book a:hover {
   text-decoration: underline;
-}
-
-/* -------------------------
-   Cards — clean, boxed, academic
-   ------------------------- */
-.carousel{
-  display:flex;
-  gap: 18px;
-  overflow-x: auto;
-  padding: 10px 2px 16px;
-  scroll-snap-type: x mandatory;
-}
-
-/* nicer scroll on touch devices */
-.carousel::-webkit-scrollbar{ height: 10px; }
-.carousel::-webkit-scrollbar-thumb{ background: #cfcfcf; border-radius: 999px; }
-.carousel::-webkit-scrollbar-track{ background: #f2f2f2; border-radius: 999px; }
-
-.card{
-  background: var(--paper);
-  border: 1px solid var(--line2);
-  min-width: 320px;
-  max-width: 320px;
-  padding: 22px;
-  scroll-snap-align: start;
-
-  display:flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  transition: border-color .15s ease, transform .15s ease;
-}
-
-.card:hover{
-  border-color: #bfbfbf;
-  transform: translateY(-1px);
-}
-
-.card h3{
-  margin: 0 0 8px;
-  font-family: "JASerif", Georgia, "Times New Roman", serif;
-  font-weight: 600;
-  font-size: 18px;
-  color: var(--ink);
-  line-height: 1.25;
-}
-
-.card-meta{
-  font-size: 13px;
-  color: var(--muted);
-  margin-bottom: 16px;
-}
-
-/* -------------------------
-   Buttons — black → red on hover (your ask)
-   ------------------------- */
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap: 10px;
-  padding: 10px 14px;
-  border: 1px solid var(--btn);
-  background: var(--btn);
-  color: var(--btnText);
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration:none;
-  cursor:pointer;
-  user-select:none;
-  transition: background .15s ease, border-color .15s ease, color .15s ease;
-}
-
-.btn:hover{
-  background: var(--btnHover);
-  border-color: var(--btnHover);
-  color: #fff;
-  text-decoration:none;
-}
-
-/* If your cards just have <a>OPEN</a>, style those like JSTOR buttons */
-.card a,
-.card .card-open,
-.card .open{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width: fit-content;
-  padding: 9px 14px;
-  border: 1px solid var(--btn);
-  background: var(--btn);
-  color: var(--btnText);
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration:none;
-  transition: background .15s ease, border-color .15s ease, color .15s ease;
-}
-
-.card a:hover,
-.card .card-open:hover,
-.card .open:hover{
-  background: var(--btnHover);
-  border-color: var(--btnHover);
-  color: #fff;
-  text-decoration:none;
-}
-
-/* -------------------------
-   Pages (grid listings)
-   ------------------------- */
-.page-title{
-  margin: 36px 0 14px;
-  font-family: "JASerif", Georgia, "Times New Roman", serif;
-  font-weight: 600;
-  font-size: 34px;
-  color: var(--ink);
-}
-
-.grid{
-  display:grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 18px;
-}
-
-.grid .card{
-  min-width: 0;
-  max-width: none;
-}
-
-/* -------------------------
-   Search bar (JSTOR-like clean)
-   ------------------------- */
-.searchbar{
-  border: 1px solid var(--line2);
-  background: #fff;
-  padding: 12px;
-  display:flex;
-  gap: 10px;
-  align-items:center;
-}
-
-.search-input{
-  flex:1;
-  border: 1px solid var(--line2);
-  padding: 10px 12px;
-  font-family: "JASans", Arial, sans-serif;
-  font-weight: 600;
-  font-size: 13px;
-  outline: none;
-}
-
-.search-input:focus{
-  border-color: var(--accent);
-}
-
-.search-status{
-  font-size: 12px;
-  color: var(--muted);
-  white-space: nowrap;
-}
-
-/* -------------------------
-   Footer (simple, institutional)
-   ------------------------- */
-.site-footer{
-  margin-top: 80px;
-  border-top: 1px solid var(--line);
-  background: var(--paper);
-}
-
-.site-footer .container{
-  padding: 26px 0;
-  display:flex;
-  justify-content: space-between;
-  gap: 18px;
-  flex-wrap: wrap;
-  color: var(--muted);
-  font-size: 12px;
-}
-
-.footer-links{
-  display:flex;
-  gap: 14px;
-}
-
-.footer-links a{
-  color: var(--muted);
-  text-decoration:none;
-}
-.footer-links a:hover{
-  color: var(--accent);
-  text-decoration: underline;
-}
-
-/* -------------------------
-   Responsive
-   ------------------------- */
-@media (max-width: 780px){
-  .site-header .container{
-    flex-direction: column;
-    align-items:flex-start;
-  }
-  .site-header nav{
-    justify-content:flex-start;
-    gap: 14px;
-  }
-  .hero{
-    padding: 54px 0 28px;
-  }
-  .carousel{
-    padding-bottom: 14px;
-  }
-  .card{
-    min-width: 280px;
-    max-width: 280px;
-  }
 }
